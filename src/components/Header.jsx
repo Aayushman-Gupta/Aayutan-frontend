@@ -9,22 +9,24 @@ import telephone from '../assets/telephone.png';
 
 export default function Header() {
 
-    const [isSticky, setIsSticky] = React.useState(false);
+    // const [isSticky, setIsSticky] = React.useState(false);
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > document.querySelector('.header-above').offsetHeight) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
-        };
+    // React.useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (window.scrollY > document.querySelector('.header-above').offsetHeight) {
+    //             setIsSticky(true);
+    //         } else {
+    //             setIsSticky(false);
+    //         }
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+    //paste this in header-above --
+    // ${isSticky ? 'fixed top-0 left-0 right-0' : ''}
 
     return (
         <header className="m-0">
@@ -53,7 +55,7 @@ export default function Header() {
             </div>
 
 
-            <div className={`header-below flex justify-between items-center ${isSticky ? 'fixed top-0 left-0 right-0' : ''} bg-white shadow-md p-5 pb-2 pt-2`}>
+            <div className={`header-below flex justify-between items-center bg-white shadow-md p-5 pb-2 pt-2`}>
                 <div className='logo flex items-center ml-10'>
                     {/* fill logo here */}
                     <img src="" alt="" />

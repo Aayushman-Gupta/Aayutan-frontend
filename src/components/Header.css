@@ -11,3 +11,10 @@
 .mails {
     margin-right: 2%;
 }
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+}

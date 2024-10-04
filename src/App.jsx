@@ -8,8 +8,13 @@ function App() {
 
   return (
     <>
-      <Header />
-      <CentreBody/>
+        <div className='header'>
+    
+            <Header />
+        </div>
+      <div className="centrebody">
+        <CentreBody/>
+      </div>
     </>
   )
 }

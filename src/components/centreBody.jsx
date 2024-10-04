@@ -42,6 +42,7 @@ function CentreBody() {
               right: 0, // Adjust as needed to position to the right
               zIndex: 2, // Bring to the front
               width: '645px', // Set desired width
+            //   overflowX: 'auto'
             }}
           />
           {/* Second Transparent Overlay Image positioned to the left */}
@@ -64,7 +65,7 @@ function CentreBody() {
             sx={{
               position: 'absolute',
               top: '20%', // Adjust as needed
-              left: '25%', // Adjust as needed
+              left: '10%', // Adjust as needed
               color: 'black', // Text color
               zIndex: 4, // Bring to the front
             }}
