@@ -28,7 +28,7 @@ export default function Header() {
 
     return (
         <header className="m-0">
-            <div className='header-above flex justify-between bg-blue-100 m-0 p-1'>
+            <div className='header-above flex justify-between bg-blue-200 m-0 p-1'>
                 <div className='flex items-center socials'>
                     {/* these addresses need to be updated */}
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -47,7 +47,7 @@ export default function Header() {
                     </a>
                     <a href="tel:+1234567890" className="contact-link flex items-center p-2">
                         <img src={telephone} alt="Phone" className="icon icon-phone h-4" />
-                        <span>+1234567890</span>
+                        <span className='text-black'>+1234567890</span>
                     </a>
                 </div>
             </div>
