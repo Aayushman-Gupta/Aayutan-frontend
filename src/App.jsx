@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header'
 import TypographyContent from './components/typography'
 import CentreBody from './components/centreBody'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
       <div className="centrebody">
         <CentreBody/>
       </div>
+
+      <Footer />
     </>
   )
 }
