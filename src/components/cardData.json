@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Card 1",
+        "content": "lorem ipsum dolor sit amet",
+        "image": "https://via.placeholder.com/150",
+        "link": "https://www.google.com"
+    },
+    {
+        "title": "Card 2",
+        "content": "lorem ipsum dolor sit amet",
+        "image": "https://via.placeholder.com/150",
+        "link": "https://www.google.com"
+    },
+    {
+        "title": "Card 3",
+        "content": "lorem ipsum dolor sit amet",
+        "image": "https://via.placeholder.com/150",
+        "link": "https://www.google.com"
+    }
+]
