@@ -41,7 +41,7 @@ function CentreBody() {
               top: '7%', // Adjust as needed to position upwards
               right: 0, // Adjust as needed to position to the right
               zIndex: 2, // Bring to the front
-              width: '645px', // Set desired width
+              width: '648px', // Set desired width
             //   overflowX: 'auto'
             }}
           />

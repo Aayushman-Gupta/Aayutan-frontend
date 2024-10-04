@@ -1,24 +1,14 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Header from './components/Header'
-import TypographyContent from './components/typography'
-import CentreBody from './components/centreBody'
-import Footer from './components/Footer'
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import Home from './pages/Home/Home'                                                                                            
 
 function App() {
 
   return (
-    <>
-        <div className='header'>
-    
-            <Header />
-        </div>
-      <div className="centrebody">
-        <CentreBody/>
-      </div>
-
-      <Footer />
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
