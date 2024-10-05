@@ -1,3 +1,10 @@
 /* .centrebody {
     overflow-x: scroll;
 } */
+
+.card-image {
+    min-height: 300px;
+    height: 30rem;
+    min-width: 400px;
+    width: 40rem;
+}

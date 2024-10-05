@@ -4,6 +4,8 @@ import TypographyContent from '../../components/typography'
 import CentreBody from '../../components/centreBody'
 import Footer from '../../components/Footer'
 import Cards from '../../components/Cardsection'
+import Card from '../../components/Card' 
+import cardData from '../../components/cardData.json'
 function Home () {
   return (
     <div>
@@ -16,7 +18,9 @@ function Home () {
         <CentreBody/>
       </div>
       <Cards/>
-    
+      {cardData.map((card, index) => (
+                <Card key={index} data={card} />
+            ))}
       <Footer />
     </>
     </div>
