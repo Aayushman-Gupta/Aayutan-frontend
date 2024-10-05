@@ -8,3 +8,17 @@
     min-width: 400px;
     width: 40rem;
 }
+
+/* added this because it wasn't working using tailwind */
+.card-section h2 {
+    font-size: 2em;
+}
+
+.card-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.miniCard:hover {
+    background-color:aliceblue;
+}
