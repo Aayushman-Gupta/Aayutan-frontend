@@ -1,8 +1,9 @@
+
 [
     {
         "title": "Card 1",
         "content": "lorem ipsum dolor sit amet",
-        "image": "https://via.placeholder.com/150",
+        "image":"https://images.pexels.com/photos/6146934/pexels-photo-6146934.jpeg?auto=compress&cs=tinysrgb&w=600",
         "link": "https://www.google.com"
     },
     {
