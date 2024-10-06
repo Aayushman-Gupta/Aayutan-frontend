@@ -2,9 +2,33 @@
     overflow-x: scroll;
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .card-image {
     min-height: 300px;
     height: 30rem;
     min-width: 400px;
     width: 40rem;
+}
+
+/* added this because it wasn't working using tailwind */
+.card-section h2 {
+    font-size: 2em;
+}
+
+.card-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.miniCard:hover {
+    background-color:aliceblue;
+}
+
+.consulting-heading {
+    font-size: 2em;
 }

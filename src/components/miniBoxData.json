@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Dermatology",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Internal Medicine",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Neurology",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "General Medicine",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Dentistry",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Otolaryngology",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "HIV/AIDS",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Urology",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Allergy",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Paediatrics",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Gastroenterology",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "title": "Infectious Diseases",
+        "image": "https://via.placeholder.com/150"
+    }
+]
