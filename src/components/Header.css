@@ -1,0 +1,20 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.socials {
+    margin-left: 2%;
+}
+
+.mails {
+    margin-right: 2%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+}
