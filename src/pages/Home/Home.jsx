@@ -6,6 +6,8 @@ import Cards from '../../components/Cardsection'
 import Card from '../../components/Card' 
 import cardData from '../../components/cardData.json'
 import VerticalCards from '../../components/verticalCards'
+import FAQ from '../../components/FAQ'
+import Consultant from '../../components/cosultant'
 function Home () {
   return (
     <>
@@ -15,7 +17,10 @@ function Home () {
       <div className="centrebody">
              <CentreBody/>
       </div>
-              {/* <Cards/> */}
+      <div>
+             <Consultant/>  
+      </div>
+              <FAQ/>
       <div>
               <VerticalCards/>
       </div>
