@@ -4,8 +4,9 @@ import CentreBody from '../../components/centreBody'
 import Footer from '../../components/Footer'
 import Cards from '../../components/Cardsection'
 import Card from '../../components/Card' 
-import cardData from '../../components/cardData.json'
+import cardData from '../../components/minicardData.json'
 import VerticalCards from '../../components/verticalCards'
+import ConsultingBox from '../../components/ConsultingBox'
 import MiniCard from '../../components/MiniCard'
 import '../../App.css'
 function Home () {
@@ -24,8 +25,10 @@ function Home () {
             })}
         </div>
       <div>
-              <VerticalCards/>
+            <VerticalCards/>
       </div>
+    
+      <ConsultingBox />
       
       <Footer />
     </>
