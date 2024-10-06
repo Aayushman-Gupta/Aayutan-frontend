@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Box, Typography, Button,  Grid2 } from '@mui/material';
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -7,6 +7,11 @@ import FAQimage from '../assets/FAQimage.jpg';
 
 
 export default function FAQ() {
+    const [expanded, setExpanded] = useState(false);
+
+    const handleChange = (panel) => (event, isExpanded) => {
+      setExpanded(isExpanded ? panel : false);
+    };
     const faqs = [
         {
             question: 'What is DocMed?',
@@ -36,8 +41,12 @@ export default function FAQ() {
             {/* FAQ Section */}
             <Box className='pl-16'>
               {faqs.map((faq, index) => (
-                <Accordion key={index} sx={{ mb: 2 ,borderRadius:'25px'}}>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Accordion 
+                key={index}
+                expanded={expanded === `panel${index}`} 
+                onChange={handleChange(`panel${index}`)} 
+                sx={{ mb: 2 ,borderRadius:'25px',  borderTop: 'none'}}>
+                  <AccordionSummary sx={{borderTop: 'none'}} expandIcon={<ExpandMoreIcon />}>
                     <Typography>{faq.question}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
