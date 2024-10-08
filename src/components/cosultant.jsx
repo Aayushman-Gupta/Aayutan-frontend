@@ -3,29 +3,50 @@ import React,{useState,useRef,useEffect} from "react"
 import './Consultant.css'; 
 
 const Consultant = () => {
-        const headingRef = useRef(null); // Ref for heading element
-        const [isVisible, setIsVisible] = useState(false);
+        const headingRef1 = useRef(null); // Ref for first heading element
+        const headingRef2 = useRef(null); // Ref for second heading element
+        const [isVisible1, setIsVisible1] = useState(false);
+        const [isVisible2, setIsVisible2] = useState(false);
       
         useEffect(() => {
-          const observer = new IntersectionObserver(
+          const observer1 = new IntersectionObserver(
             (entries) => {
               const [entry] = entries;
               if (entry.isIntersecting) {
-                setIsVisible(true); // Start the animation when the heading is visible
+                setIsVisible1(true); // Start the animation when the first heading is visible
               } else {
-                setIsVisible(false); // Optionally, reset when scrolling out
+                setIsVisible1(false); // Optionally, reset when scrolling out
               }
             },
             { threshold: 0.2 } // Adjust threshold to control when the animation starts
           );
           
-          if (headingRef.current) {
-            observer.observe(headingRef.current);
+          const observer2 = new IntersectionObserver(
+            (entries) => {
+              const [entry] = entries;
+              if (entry.isIntersecting) {
+                setIsVisible2(true); // Start the animation when the second heading is visible
+              } else {
+                setIsVisible2(false); // Optionally, reset when scrolling out
+              }
+            },
+            { threshold: 0.2 } // Adjust threshold to control when the animation starts
+          );
+          
+          if (headingRef1.current) {
+            observer1.observe(headingRef1.current);
+          }
+          
+          if (headingRef2.current) {
+            observer2.observe(headingRef2.current);
           }
           
           return () => {
-            if (headingRef.current) {
-              observer.unobserve(headingRef.current);
+            if (headingRef1.current) {
+              observer1.unobserve(headingRef1.current);
+            }
+            if (headingRef2.current) {
+              observer2.unobserve(headingRef2.current);
             }
           };
         }, []);
@@ -36,9 +57,9 @@ const Consultant = () => {
     <Grid2 className=' flex p-4 justify-between'>
         <img src="src\assets\imageforappointment.jpg" className='rounded-full bg-blue-50 w-2/6'/>
         <Box className='p-10 w-3/5'>
-            <h1  ref={headingRef} 
+            <h1  ref={headingRef1} 
                  className={`font-bold text-blue-950 text-5xl p-8 leading-relaxed pl-16 transition-all duration-1000 ${
-                 isVisible ? 'animate-slideUp' : '' // Add animation class when visible
+                 isVisible1 ? 'animate-slideUp' : '' // Add animation class when visible
           }`}>
                 Book Appointment With
                 <br/> Your Nearby Doctor
@@ -58,9 +79,9 @@ const Consultant = () => {
     </Grid2>
     <Grid2 className=' flex p-4 justify-between'>
         <Box className='p-10 w-3/5'>
-            <h1  ref={headingRef} 
+            <h1  ref={headingRef2} 
                  className={`font-bold text-blue-950 text-5xl p-8 leading-relaxed pl-16 transition-all duration-1000 ${
-                 isVisible ? 'animate-slideUp' : '' // Add animation class when visible
+                 isVisible2 ? 'animate-slideUp' : '' // Add animation class when visible
           }`}>
                 Get Content And<br/> Video Solutions In Click
             </h1>
