@@ -7,6 +7,7 @@ import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
 import gmail from '../assets/gmail.png';
 import telephone from '../assets/telephone.png';
+import { Link } from 'react-router-dom';
 
 
 export default function Header() {
@@ -76,10 +77,11 @@ export default function Header() {
                     </nav>
                 </div>
                 <div className='mt-2 mr-16 mb-2'>
-                    <a className='mr-4' href='#'> Login</a>
-                    <button class="bg-blue-950 hover:bg-black text-white font-thin   py-2 px-4 rounded-full">
+                    <Link className='mr-4' to='/signin'> Login</Link>
+                    <Link to='/signup'><button class="bg-blue-950 hover:bg-black text-white font-thin   py-2 px-4 rounded-full">
                     Register
                     </button>
+                    </Link>
                 </div>
             </div>
         </header>

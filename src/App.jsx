@@ -1,6 +1,6 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Home from './pages/Home/Home'                                                                                            
-import SignIn from './pages/Auth/Signin/Signin'
+import SignIn from './pages/Auth/Signin/SignIn'
 import SignUp from './pages/Auth/Signup/SignUp'
 import Chat from './pages/Chat/Chat'
 import AppointmentFilterBar from './pages/Appointment/Appointment'
