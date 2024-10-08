@@ -76,7 +76,9 @@ export default function Header() {
                     </nav>
                 </div>
                 <div className='mt-2 mr-16 mb-2'>
-                    <a className='mr-4' href='#'> Login</a>
+                    <a href="/signin" className="bg-blue-950 hover:bg-black text-white font-thin py-2 px-4 rounded-full mr-4">
+                        Sign In
+                    </a>
                     <button class="bg-blue-950 hover:bg-black text-white font-thin   py-2 px-4 rounded-full">
                     Register
                     </button>
