@@ -67,18 +67,18 @@ export default function Header() {
                 <div>
                     <nav>
                         <ul className="nav-links flex items-center">
-                            <li className="p-2"><a href="/" className="p-2">Home</a></li>
-                            <li className="p-2"><a href="/department" className="p-2">Department</a></li>
-                            <li className="p-2"><a href="/chat" className="p-2">Chat</a></li>
-                            <li className="p-2"><a href="/appointment" className="p-2">Appointment</a></li>
-                            <li className="p-2"><a href="/doctors" className="p-2">Doctors</a></li>
-                            <li className="p-2"><a href="/contact" className="p-2">Contact</a></li>
+                            <li className="p-2"><a href="/" className="p-2 hover:scale-120 hover:underline">Home</a></li>
+                            <li className="p-2"><a href="/department" className="p-2 hover:scale-120 hover:underline">Department</a></li>
+                            <li className="p-2"><a href="/chat" className="p-2 hover:scale-120">Chat</a></li>
+                            <li className="p-2"><a href="/appointment" className="p-2 hover:scale-120 hover:underline">Appointment</a></li>
+                            <li className="p-2"><a href="/doctors" className="p-2 hover:scale-120 hover:underline">Doctors</a></li>
+                            <li className="p-2"><a href="/contact" className="p-2 hover:scale-120 hover:underline">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div className='mt-2 mr-16 mb-2'>
-                    <Link className='mr-4' to='/signin'> Login</Link>
-                    <Link to='/signup'><button class="bg-blue-950 hover:bg-black text-white font-thin   py-2 px-4 rounded-full">
+                    <Link className='mr-4 hover:scale-120' to='/signin'> Login</Link>
+                    <Link to='/signup'><button class="bg-blue-950 hover:bg-black text-white font-thin py-2 px-4 rounded-full hover:scale-120">
                     Register
                     </button>
                     </Link>
