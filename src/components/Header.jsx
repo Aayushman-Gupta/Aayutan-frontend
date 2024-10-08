@@ -12,28 +12,39 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
 
-    // const [isSticky, setIsSticky] = React.useState(false);
+    const [isSticky, setIsSticky] = React.useState(false);
 
-    // React.useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (window.scrollY > document.querySelector('.header-above').offsetHeight) {
-    //             setIsSticky(true);
-    //         } else {
-    //             setIsSticky(false);
-    //         }
-    //     };
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > document.querySelector('.header-above').offsetHeight) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
 
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    React.useEffect(() => {
+        const headerBelow = document.querySelector('.header-below');
+        if (isSticky) {
+            headerBelow.style.transition = 'top 0.3s ease-in-out';
+            headerBelow.style.top = '0';
+        } else {
+            headerBelow.style.transition = 'top 0.3s ease-in-out';
+            headerBelow.style.top = `20px`;
+        }
+    }, [isSticky]);
     //paste this in header-above --
     // ${isSticky ? 'fixed top-0 left-0 right-0' : ''}
 
     return (
         <header className="m-0">
-            <div className='header-above flex justify-between bg-blue-200 m-0 p-1'>
+            <div className={`header-above flex justify-between bg-blue-200 m-0 p-1`}>
                 <div className='flex items-center socials'>
                     {/* these addresses need to be updated */}
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -57,8 +68,7 @@ export default function Header() {
                 </div>
             </div>
 
-
-            <div className={`header-below flex justify-between items-center bg-white shadow-md p-0 pb-0 pt-0`}>
+            <div className={`header-below flex justify-between items-center bg-white shadow-md p-0 pb-0 pt-0 ${isSticky ? 'fixed top-0 left-0 right-0' : ''}`}>
                 <div className='logo flex items-center ml-10'>
                     {/* fill logo here */}
                     <img src="#" alt="" />
@@ -78,7 +88,7 @@ export default function Header() {
                 </div>
                 <div className='mt-2 mr-16 mb-2'>
                     <Link className='mr-4 hover:scale-120' to='/signin'> Login</Link>
-                    <Link to='/signup'><button class="bg-blue-950 hover:bg-black text-white font-thin py-2 px-4 rounded-full hover:scale-120">
+                    <Link to='/signup'><button className="bg-blue-950 hover:bg-black text-white font-thin py-2 px-4 rounded-full hover:scale-120">
                     Register
                     </button>
                     </Link>
