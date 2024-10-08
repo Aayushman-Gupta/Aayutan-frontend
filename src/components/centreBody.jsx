@@ -4,6 +4,7 @@ import backgroundImage from '../assets/background-overlay.jpg'
 import background from '../assets/background_blue.jpg'
 import overlayimg from '../assets/image-removebg.png'
 import transparentOverlayImg from '../assets/transparentOverlayImg.png'
+import { blue } from '@mui/material/colors';
 
 function CentreBody() {
     return (
@@ -88,7 +89,7 @@ function CentreBody() {
                 animation: 'slideUp 2s ease-in-out', // Same animation for the description
                 animationDelay: '0.5s', // Delayed appearance for smooth effect
               }}    >
-              Your Health,Our Daily<br/> Discussions
+             <span style={{ fontWeight: '1000',fontSize:'100px',color:'#140444'}}>Your Health,</span><br/>Our Daily Discussions
             </Typography>
             <Typography 
             variant="body1" 

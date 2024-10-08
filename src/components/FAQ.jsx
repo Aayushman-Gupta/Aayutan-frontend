@@ -40,19 +40,23 @@ export default function FAQ() {
     
             {/* FAQ Section */}
             <Box className='pl-16'>
-              {faqs.map((faq, index) => (
+              {faqs.map((faq, index) => ( 
+                <>
+               
                 <Accordion 
                 key={index}
                 expanded={expanded === `panel${index}`} 
                 onChange={handleChange(`panel${index}`)} 
-                sx={{ mb: 2 ,borderRadius:'25px',  borderTop: 'none'}}>
-                  <AccordionSummary sx={{borderTop: 'none'}} expandIcon={<ExpandMoreIcon />}>
-                    <Typography>{faq.question}</Typography>
+                
+                sx={{ mb: 2, backgroundColor:'#D8D6DC'}}>
+                  <AccordionSummary  expandIcon={<ExpandMoreIcon />}>
+                    <Typography sx={{fontWeight:600}}>{faq.question}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>{faq.answer}</Typography>
                   </AccordionDetails>
                 </Accordion>
+                </>
               ))} 
             </Box>
           </Box>

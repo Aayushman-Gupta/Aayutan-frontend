@@ -1,0 +1,14 @@
+@keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(100px); /* Start below */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End at final position */
+    }
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 2s ease-in-out forwards; /* Animation should last 2s */
+  }

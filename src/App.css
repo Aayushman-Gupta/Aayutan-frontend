@@ -25,10 +25,17 @@ body {
     margin: 0 auto;
 }
 
-.miniCard:hover {
-    background-color:aliceblue;
-}
 
 .consulting-heading {
     font-size: 2em;
+}
+.miniCard {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Pop out effect on hover */
+.miniCard:hover {
+    background-color:aliceblue;
+    transform: scale(1.05); /* Scale the card slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow to make it pop */
 }

@@ -1,9 +1,9 @@
 
 [
     {
-        "title": "Card 1",
+        "title": "20+ Doctors",
         "content": "lorem ipsum dolor sit amet",
-        "image":"https://images.pexels.com/photos/6146934/pexels-photo-6146934.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image":"https://images.pexels.com/photos/5888160/pexels-photo-5888160.jpeg?auto=compress&cs=tinysrgb&w=900",
         "link": "https://www.google.com"
     },
     {
@@ -19,9 +19,9 @@
         "link": "https://www.google.com"
     },
     {
-        "title": "Card 4",
+        "title": "From home testing",
         "content": "lorem ipsum dolor sit amet",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://images.pexels.com/photos/1350560/pexels-photo-1350560.jpeg?auto=compress&cs=tinysrgb&w=600",
         "link": "https://www.google.com"
     }
 ]
