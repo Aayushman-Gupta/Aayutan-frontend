@@ -93,7 +93,7 @@ const Consultant = () => {
             </p>
             <div className='p-6 pl-16'>
                 <button className="border rounded-full bg-purple-600 text-white cursor-pointer p-3 text-lg hover:transition-transform hover:scale-105">
-                    Book Appointment
+                    Get Content
                 </button>
             </div>
         </Box>
