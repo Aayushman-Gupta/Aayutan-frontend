@@ -2,6 +2,9 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Home from './pages/Home/Home'                                                                                            
 import SignIn from './pages/Auth/Signin/Signin'
 import SignUp from './pages/Auth/Signup/SignUp'
+import Chat from './pages/Chat/Chat'
+import AppointmentFilterBar from './pages/Appointment/Appointment'
+
 function App() {
 
   return (
@@ -10,6 +13,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/signin" element={<SignIn/>}/>
       <Route path="/signup" element={<SignUp/>}/>
+      <Route path="/chat" element={<Chat/>}/>
     </Routes>
     </BrowserRouter>
   )

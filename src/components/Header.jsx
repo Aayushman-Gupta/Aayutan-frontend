@@ -1,11 +1,13 @@
 // import React from 'react';
 import './Header.css';
+import {Button} from "@mui/material"
 import React, { useEffect, useState } from 'react';
 import linkedin from '../assets/linkedin.png';
 import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
 import gmail from '../assets/gmail.png';
 import telephone from '../assets/telephone.png';
+
 
 export default function Header() {
 
@@ -55,16 +57,16 @@ export default function Header() {
             </div>
 
 
-            <div className={`header-below flex justify-between items-center bg-white shadow-md p-5 pb-2 pt-2`}>
+            <div className={`header-below flex justify-between items-center bg-white shadow-md p-0 pb-0 pt-0`}>
                 <div className='logo flex items-center ml-10'>
                     {/* fill logo here */}
-                    <img src="" alt="" />
+                    <img src="#" alt="" />
                     <h1>DocMed</h1>
                 </div>
                 <div>
                     <nav>
                         <ul className="nav-links flex items-center">
-                            <li className="p-2"><a href="/home" className="p-2">Home</a></li>
+                            <li className="p-2"><a href="/" className="p-2">Home</a></li>
                             <li className="p-2"><a href="/department" className="p-2">Department</a></li>
                             <li className="p-2"><a href="/chat" className="p-2">Chat</a></li>
                             <li className="p-2"><a href="/appointment" className="p-2">Appointment</a></li>
@@ -73,8 +75,11 @@ export default function Header() {
                         </ul>
                     </nav>
                 </div>
-                <div className='mt-2 mb-2'>
-                    <a className="p-2 bg-blue-500 text-white rounded-md mr-10">Login/Signup</a>
+                <div className='mt-2 mr-16 mb-2'>
+                    <a className='mr-4' href='#'> Login</a>
+                    <button class="bg-blue-950 hover:bg-black text-white font-thin   py-2 px-4 rounded-full">
+                    Register
+                    </button>
                 </div>
             </div>
         </header>
