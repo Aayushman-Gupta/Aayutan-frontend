@@ -62,7 +62,7 @@ const Consultant = () => {
                  className={`font-bold text-blue-950 text-5xl p-8 leading-relaxed pl-16 transition-all duration-1000 ${
                  isVisible ? 'animate-slideUp' : '' // Add animation class when visible
           }`}>
-                Get Content And<br/> Videos Solutions In Click
+                Get Content And<br/> Video Solutions In Click
             </h1>
             <p className="font-medium  p-8 pl-16 leading-loose">
                 <div className="mb-2 border-8 rounded-2xl bg-slate-200 transition-transform hover:scale-105">[1] Navigate to the appointment section through navigation bar or through the button given below.</div>
