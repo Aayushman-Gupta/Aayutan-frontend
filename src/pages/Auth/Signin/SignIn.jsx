@@ -80,10 +80,8 @@ export default function SignIn(props) {
       return;
     }
     const data = new FormData(event.currentTarget);
-    console.log({
-      username: data.get('username'),
-      password: data.get('password'),
-    });
+    const username=data.get('username')
+    const password= data.get('password')
   };
 
   const validateInputs = () => {
@@ -140,7 +138,7 @@ export default function SignIn(props) {
             }}
           >
             <FormControl>
-              <FormLabel htmlFor="username">username</FormLabel>
+              <FormLabel htmlFor="username">Username</FormLabel>
               <TextField
                 error={usernameError}
                 helperText={usernameErrorMessage}
