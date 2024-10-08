@@ -32,11 +32,11 @@ export default function Header() {
     React.useEffect(() => {
         const headerBelow = document.querySelector('.header-below');
         if (isSticky) {
-            headerBelow.style.transition = 'top 0.3s ease-in-out';
+            headerBelow.style.transition = 'top 0.6s ease-in-out';
             headerBelow.style.top = '0';
         } else {
             headerBelow.style.transition = 'top 0.3s ease-in-out';
-            headerBelow.style.top = `20px`;
+            headerBelow.style.top = `40px`;
         }
     }, [isSticky]);
     //paste this in header-above --
