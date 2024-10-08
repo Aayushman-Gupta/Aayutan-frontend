@@ -16,7 +16,7 @@ export default function Header() {
 
     React.useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > document.querySelector('.header-above').offsetHeight) {
+            if (window.scrollY > document.querySelector('.header-above').offsetHeight * 0.8) {
                 setIsSticky(true);
             } else {
                 setIsSticky(false);
