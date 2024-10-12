@@ -11,48 +11,65 @@ import Consultant from '../../components/cosultant'
 import ConsultingBox from '../../components/ConsultingBox'
 import MiniCard from '../../components/MiniCard'
 import '../../App.css'
+import Chat from '../../pages/Chat/Chat.jsx'
+import ChatList from '../../pages/Chat/ChatList.jsx'
 
-function Home () {
-  return (
-    <>
-      <div className='header'>
-      <Header />
-      </div>
 
-      <div className="centrebody">
-      <CentreBody/>
-      </div>
+function Home() {
+    const [isChatListVisible, setIsChatListVisible] = React.useState(false);
+    
+    const toggleChatListVisibility = () => {
+        setIsChatListVisible(!isChatListVisible);
+    };
+    return (
+        <>
+            <div className='header'>
+                <Header />
+            </div>
 
-           {/* <Cards/> */}
-      <div className="card-section flex justify-between">
-            {cardData.map((data) => {
-                return <MiniCard data={data}/>
-            })}
-      </div>
-     
+            <div className="centrebody">
+                <CentreBody />
+            </div>
 
-      <div>
-      <Consultant/>  
-      </div>
-          
+            {/* <Cards/> */}
+            <div className="card-section flex justify-between">
+                {cardData.map((data) => {
+                    return <MiniCard data={data} />
+                })}
+            </div>
 
-      <div>
-      <ConsultingBox />
-      </div>
+            <div>
+                <Consultant />
+            </div>
 
-      <div>
-      <FAQ/>
-      </div>
-      {/* <div>
+            <div>
+                <ConsultingBox />
+            </div>
+
+            <div>
+                <FAQ />
+            </div>
+            {/* <div>
       <VerticalCards/>
       </div> */}
-    
 
-      <div>
-      <Footer />
-      </div>
-    </>
-  )
+            {/* <div>
+        <Chat />
+    </div> */}
+
+            <div className={`fixed bottom-5 right-5 z-10 bg-white rounded-3xl ${isChatListVisible ? 'block' : 'hidden'}`}>
+                <ChatList />
+            </div>
+
+            <button className="fixed bottom-5 right-5 z-10" onClick={toggleChatListVisibility}>
+                <img src="../../src/assets/chat.png" alt="" className='h-20 p-5 rounded-3xl bg-blue-100' />
+            </button>
+
+            <div>
+                <Footer />
+            </div>
+        </>
+    )
 }
 
 export default Home

@@ -12,28 +12,39 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
 
-    // const [isSticky, setIsSticky] = React.useState(false);
+    const [isSticky, setIsSticky] = React.useState(false);
 
-    // React.useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (window.scrollY > document.querySelector('.header-above').offsetHeight) {
-    //             setIsSticky(true);
-    //         } else {
-    //             setIsSticky(false);
-    //         }
-    //     };
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > document.querySelector('.header-above').offsetHeight * 0.8) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
 
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    React.useEffect(() => {
+        const headerBelow = document.querySelector('.header-below');
+        if (isSticky) {
+            headerBelow.style.transition = 'top 0.6s ease-in-out';
+            headerBelow.style.top = '0';
+        } else {
+            headerBelow.style.transition = 'top 0.3s ease-in-out';
+            headerBelow.style.top = `40px`;
+        }
+    }, [isSticky]);
     //paste this in header-above --
     // ${isSticky ? 'fixed top-0 left-0 right-0' : ''}
 
     return (
         <header className="m-0">
-            <div className='header-above flex justify-between bg-blue-200 m-0 p-1'>
+            <div className={`header-above flex justify-between bg-blue-200 m-0 p-1`}>
                 <div className='flex items-center socials'>
                     {/* these addresses need to be updated */}
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -57,8 +68,7 @@ export default function Header() {
                 </div>
             </div>
 
-
-            <div className={`header-below flex justify-between items-center bg-white shadow-md p-0 pb-0 pt-0`}>
+            <div className={`header-below flex justify-between items-center bg-white shadow-md p-0 pb-0 pt-0 ${isSticky ? 'fixed top-0 left-0 right-0' : ''}`}>
                 <div className='logo flex items-center ml-10'>
                     {/* fill logo here */}
                     <img src="#" alt="" />
@@ -67,18 +77,18 @@ export default function Header() {
                 <div>
                     <nav>
                         <ul className="nav-links flex items-center">
-                            <li className="p-2"><a href="/" className="p-2">Home</a></li>
-                            <li className="p-2"><a href="/department" className="p-2">Department</a></li>
-                            <li className="p-2"><a href="/chat" className="p-2">Chat</a></li>
-                            <li className="p-2"><a href="/appointment" className="p-2">Appointment</a></li>
-                            <li className="p-2"><a href="/doctors" className="p-2">Doctors</a></li>
-                            <li className="p-2"><a href="/contact" className="p-2">Contact</a></li>
+                            <li className="p-2"><a href="/" className="p-2 hover:scale-120 hover:underline">Home</a></li>
+                            <li className="p-2"><a href="/department" className="p-2 hover:scale-120 hover:underline">Department</a></li>
+                            <li className="p-2"><Link to="/chat" className="p-2 hover:scale-120">Chat</Link></li>
+                            <li className="p-2"><a href="/appointment" className="p-2 hover:scale-120 hover:underline">Appointment</a></li>
+                            <li className="p-2"><a href="/doctors" className="p-2 hover:scale-120 hover:underline">Doctors</a></li>
+                            <li className="p-2"><a href="/contact" className="p-2 hover:scale-120 hover:underline">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div className='mt-2 mr-16 mb-2'>
-                    <Link className='mr-4' to='/signin'> Login</Link>
-                    <Link to='/signup'><button class="bg-blue-950 hover:bg-black text-white font-thin   py-2 px-4 rounded-full">
+                    <Link className='mr-4 hover:scale-120' to='/signin'>Login</Link>
+                    <Link to='/signup'><button className="bg-blue-950 hover:bg-black text-white font-thin py-2 px-4 rounded-full hover:scale-120">
                     Register
                     </button>
                     </Link>
