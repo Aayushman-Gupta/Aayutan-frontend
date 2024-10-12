@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
@@ -49,12 +49,14 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
   }),
 }));
 
-export default function SignUp() {
+export default function SignUpPatient() {
   const [mode, setMode] = React.useState('light');
   const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   const defaultTheme = createTheme({ palette: { mode } });
   const [nameError, setNameError] = React.useState(false);
   const [nameErrorMessage, setNameErrorMessage] = React.useState('');
+  const [degreeError, setDegreeError] = useState(second)
+  const [degreeErrorMessage, setdegreeErrorMessage] = useState(second)
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
@@ -134,6 +136,11 @@ export default function SignUp() {
       password: data.get('password'),
     });
   };
+  const [selectedExperience, setSelectedExperience] = useState('');
+
+  const handleSelectedExperience = (event) => {
+    setSelectedExperience(event.target.value);
+  };
 
   return (
     <>
@@ -198,6 +205,52 @@ export default function SignUp() {
                   color={passwordError ? 'error' : 'primary'}
                 />
               </FormControl>
+              <FormControl>
+                <FormLabel htmlFor="email">Degree/Qualifications</FormLabel>
+                <TextField
+                  required
+                  fullWidth
+                  id="qualification"
+                  placeholder="your qualification(s)"
+                  name="qualification"
+                  // autoComplete="email"
+                  variant="outlined"
+                  error={degreeError}
+                  helperText={degreeErrorMessage}
+                  color={passwordError ? 'error' : 'primary'}
+                />
+              </FormControl>
+              <FormControl fullWidth>
+              <InputLabel id="select-label">Experience</InputLabel> 
+              <Select
+                labelId="select-experience"
+                id="experience"
+                value={selectedExperience}
+                onChange={handleSelectedExperience}
+                variant="outlined"
+              >
+                {/* Replace these options with your own */}
+                <MenuItem value="option1">1</MenuItem>
+                <MenuItem value="option2">2</MenuItem>
+                <MenuItem value="option3">3</MenuItem>
+                <MenuItem value="option3">4</MenuItem>
+                <MenuItem value="option3">6</MenuItem>
+                <MenuItem value="option3">7</MenuItem>
+                <MenuItem value="option3">8</MenuItem>
+                <MenuItem value="option3">9</MenuItem>
+                <MenuItem value="option3">10</MenuItem>
+                <MenuItem value="option3">11</MenuItem>
+                <MenuItem value="option3">12</MenuItem>
+                <MenuItem value="option3">13</MenuItem>
+                <MenuItem value="option3">14</MenuItem>
+                <MenuItem value="option3">15</MenuItem>
+                <MenuItem value="option3">16</MenuItem>
+                <MenuItem value="option3">17</MenuItem>
+                <MenuItem value="option3">18</MenuItem>
+                <MenuItem value="option3">19</MenuItem>
+                <MenuItem value="option3">20+</MenuItem>
+              </Select>
+            </FormControl>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="I want to receive updates via email."
