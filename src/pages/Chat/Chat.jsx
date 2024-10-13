@@ -1,9 +1,10 @@
-import React, { useEffect, useState,useRef } from 'react';
+import React, { useEffect, useState,useRef, useContext } from 'react';
 import getchatid from './chatapi';
 import { AttachFile, Send } from '@mui/icons-material';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import { IconButton, Stack } from '@mui/material';
 import MessageComponent from '../../components/messagecomponent';
+import userContext from '../../context/userContext/userContext';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -11,16 +12,16 @@ const Chat = () => {
   const [socket, setSocket] = useState(null);  // Store the WebSocket connection in state
   const [chatId, setChatId] = useState(null);  // Store the chat ID
   const containerRef = useRef(null);
+  const context=useContext(userContext)
+  const {userName}=context
 
   // Fetch the chat ID and establish a WebSocket connection
   useEffect(() => {
     const fetchChatIdAndConnect = async () => {
       try {
-        const id = await getchatid('yash', 'yash2');
-        setChatId(id.data.chat_id);  // Set the chat ID in state
-        console.log(id.data.chat_id);
+        
 
-        const newSocket = new WebSocket(`ws://localhost:8000/ws/chat/${id.data.chat_id}/`);
+        const newSocket = new WebSocket(`ws://localhost:8000/ws/chat/${userName}/`);
         setSocket(newSocket);  // Save the WebSocket connection in state
 
         // Handle incoming messages

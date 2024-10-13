@@ -4,4 +4,4 @@ const userContext = createContext({
   username: "",
 });
 
-const userContextProvider = userContext.Provider;
+export default userContext 
