@@ -97,8 +97,9 @@ export default function SignIn(props) {
     const password_= data.get('password')
     setuser({username:username_,password:password_})
     const atoken=await loginapi({username:username_,password:password_})
-    console.log(atoken.token.access)
+   
     if(atoken){
+      console.log(atoken.token.access)
       if(atoken.token.access){
         localStorage.setItem('atoken',atoken.token.access)
         nav("/");
@@ -118,32 +119,32 @@ export default function SignIn(props) {
 
   };
 
-  const validateInputs = () => {
-    const username = document.getElementById('username');
-    const password = document.getElementById('password');
+  // const validateInputs = () => {
+  //   const username = document.getElementById('username');
+  //   const password = document.getElementById('password');
 
-    let isValid = true;
+  //   let isValid = true;
 
-    if (!username.value || !/\S+@\S+\.\S+/.test(username.value)) {
-      setusernameError(true);
-      setusernameErrorMessage('Please enter a valid username address.');
-      isValid = false;
-    } else {
-      setusernameError(false);
-      setusernameErrorMessage('');
-    }
+  //   if (!username.value || !/\S+@\S+\.\S+/.test(username.value)) {
+  //     setusernameError(true);
+  //     setusernameErrorMessage('Please enter a valid username address.');
+  //     isValid = false;
+  //   } else {
+  //     setusernameError(false);
+  //     setusernameErrorMessage('');
+  //   }
 
-    if (!password.value || password.value.length < 6) {
-      setPasswordError(true);
-      setPasswordErrorMessage('Password must be at least 6 characters long.');
-      isValid = false;
-    } else {
-      setPasswordError(false);
-      setPasswordErrorMessage('');
-    }
+  //   if (!password.value || password.value.length < 6) {
+  //     setPasswordError(true);
+  //     setPasswordErrorMessage('Password must be at least 6 characters long.');
+  //     isValid = false;
+  //   } else {
+  //     setPasswordError(false);
+  //     setPasswordErrorMessage('');
+  //   }
 
-    return isValid;
-  };
+  //   return isValid;
+  // };
 
   return (
     // <AppTheme {...props}>
@@ -226,7 +227,7 @@ export default function SignIn(props) {
               type="submit"
               fullWidth
               variant="contained"
-              onClick={validateInputs}
+              // onClick={validateInputs}
             >
               Sign in
             </Button>
