@@ -43,16 +43,20 @@
 
 import { Box, Typography } from '@mui/material';
 import React from 'react';
+import { useContext } from 'react';
+import userContext from '../context/userContext/userContext';
 
 const MessageComponent = ({ message_data }) => {
   if (!message_data) return null; // Return null if message is undefined
+  const context= useContext(userContext)
+  const {userName}=context
 
   
 
   const { message,sender_username, reciever_username } = message_data;
-  console.log(message)
+  console.log(message,sender_username,userName)
   
-  const sameSender = sender_username === 'yash';
+  const sameSender = sender_username === userName;
   
 
   //console.log(sender?._id,user?.id);

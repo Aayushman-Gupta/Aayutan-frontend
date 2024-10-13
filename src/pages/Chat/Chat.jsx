@@ -15,12 +15,17 @@ const Chat = () => {
   const context=useContext(userContext)
   const {userName}=context
   
+
   // Fetch the chat ID and establish a WebSocket connection
   useEffect(() => {
     const fetchChatIdAndConnect = async () => {
       try {
         const newSocket = new WebSocket(`ws://localhost:8000/ws/chat/${userName}/`);
         setSocket(newSocket);  // Save the WebSocket connection in state
+
+        newSocket.onopen = function(event) {
+          console.log('WebSocket connection established');
+      };
 
         // Handle incoming messages
         newSocket.onmessage = function (event) {
@@ -61,7 +66,9 @@ const Chat = () => {
   const handleSubmit=(e)=>{
     e.preventDefault();
     if (socket && message) {
-      socket.send(JSON.stringify({ message,"sender_username":'yash',"receiver_username":"yash2" }));
+      scrollToBottom();
+      setMessages((prevMessages) => [...prevMessages, {message,sender_username:userName}]);
+      socket.send(JSON.stringify({ message,receiver_username: "yash2" }));
       setMessage("");  // Clear the message input
     }
   }
@@ -74,7 +81,7 @@ const Chat = () => {
         padding="1rem"
         spacing="1rem"
         bgcolor="#e4f5f5"
-        height="85%"
+        minHeightheight="85%"
         sx={{
           overflowX: "hidden",
           overflowY: 'scroll',

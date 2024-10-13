@@ -5,7 +5,7 @@ import { useState } from 'react'
 function Usercontextprovider(props) {
 
     const [userName,setUserName]=useState("");
-    let flag=false
+    
     const loginapi=async(user)=>{
         const response = await fetch(`http://localhost:8000/auth/p/login/`, {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -18,18 +18,18 @@ function Usercontextprovider(props) {
             body: JSON.stringify(user),
     })
     const res=await response.json();
-    if(localStorage.getItem('atoken'))
-    {
+    
 
-        setUserName(user.username)
+        await setname(user.username)
         console.log(userName)
-    }
+    
     return res
 }
+const setname=async(uname)=>{
+  setUserName(uname)
+}
 
-useEffect(() => {
-        setUserName(userName) // Logs userName whenever it changes
-}, [flag]);
+
 
   return (
     
