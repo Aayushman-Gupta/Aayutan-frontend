@@ -15,6 +15,8 @@ import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
+import userContext from '../../../context/userContext/userContext';
+import { useNavigate } from 'react-router-dom';
 // import AppTheme from '../shared-theme/AppTheme';
 // import ColorModeSelect from '../shared-theme/ColorModeSelect';
 
@@ -65,6 +67,14 @@ export default function SignIn(props) {
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const [user,setuser]=React.useState({username:"",password:""})
+
+  const context = React.useContext(userContext)
+  const {loginapi}= context
+  const nav=useNavigate()
+
+
+  
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -74,14 +84,38 @@ export default function SignIn(props) {
     setOpen(false);
   };
 
-  const handleSubmit = (event) => {
+
+
+  const handleSubmit = async(event) => {
+    event.preventDefault();
     if (usernameError || passwordError) {
-      event.preventDefault();
+      
       return;
     }
     const data = new FormData(event.currentTarget);
-    const username=data.get('username')
-    const password= data.get('password')
+    const username_=data.get('username')
+    const password_= data.get('password')
+    setuser({username:username_,password:password_})
+    const atoken=await loginapi({username:username_,password:password_})
+    console.log(atoken.token.access)
+    if(atoken){
+      if(atoken.token.access){
+        localStorage.setItem('atoken',atoken.token.access)
+        nav("/");
+      }
+      else{
+        console.log(atoken.error);
+        nav('/login');
+      }
+    }
+    else{
+      nav("/login");
+      
+    }
+    setuser({username:"",password:""})
+    
+
+
   };
 
   const validateInputs = () => {

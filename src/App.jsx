@@ -12,8 +12,13 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>}/>
+<<<<<<< HEAD
       <Route path="/signin" element={<SignIn/>}/>
       <Route path="/signup" element={<SignUpDoctor/>}/> 
+=======
+      
+      <Route path="/signup" element={<SignUp/>}/>
+>>>>>>> db34e2182956fe16cbd2bd726a6e161700aeb97c
       <Route path="/chat" element={<Chat/>}/>
       
     </Routes>
