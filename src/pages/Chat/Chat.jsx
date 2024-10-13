@@ -14,13 +14,11 @@ const Chat = () => {
   const containerRef = useRef(null);
   const context=useContext(userContext)
   const {userName}=context
-
+  
   // Fetch the chat ID and establish a WebSocket connection
   useEffect(() => {
     const fetchChatIdAndConnect = async () => {
       try {
-        
-
         const newSocket = new WebSocket(`ws://localhost:8000/ws/chat/${userName}/`);
         setSocket(newSocket);  // Save the WebSocket connection in state
 
