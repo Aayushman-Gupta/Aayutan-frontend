@@ -12,7 +12,8 @@ import ConsultingBox from '../../components/ConsultingBox'
 import MiniCard from '../../components/MiniCard'
 import '../../App.css'
 import Chat from '../../pages/Chat/Chat.jsx'
-import ChatList from '../../pages/Chat/ChatList.jsx'
+import ChatList from '../../components/ChatList'
+
 
 
 function Home() {

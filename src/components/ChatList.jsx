@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import data from './tempData.json';
+import data from '../pages/Chat/tempData.json';
 
 export default function ChatList() {
     const [searchTerm, setSearchTerm] = useState('');
