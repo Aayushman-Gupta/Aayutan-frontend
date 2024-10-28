@@ -53,7 +53,7 @@ const MessageComponent = ({ message_data }) => {
 
   
 
-  const { message,sender_username, reciever_username } = message_data;
+  const { message,sender_username} = message_data;
   console.log(message,sender_username,userName)
   
   const sameSender = sender_username === userName;
