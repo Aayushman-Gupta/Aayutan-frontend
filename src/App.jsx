@@ -1,9 +1,10 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Home from './pages/Home/Home'                                                                                            
 import SignIn from './pages/Auth/Signin/SignIn'
-import SignUp from './pages/Auth/Signup/SignUp'
-import Chat from './pages/Chat/Chat'
+import SignUpDoctor from './pages/Auth/Signup/SignUpDoctor'
+import Chat from './components/ChatList.jsx'
 import AppointmentFilterBar from './pages/Appointment/Appointment'
+import Appointment from './pages/Appointment/Appointment'
 
 function App() {
 
@@ -12,8 +13,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/signIn" element={<SignIn/>}/>
-      <Route path="/signup" element={<SignUp/>}/>
+      <Route path="/signup" element={<SignUpDoctor/>}/>
       <Route path="/chat" element={<Chat/>}/>
+      
     </Routes>
     </BrowserRouter>
   )

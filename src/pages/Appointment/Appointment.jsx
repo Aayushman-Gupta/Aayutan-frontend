@@ -1,8 +1,17 @@
 import React from 'react'
+import AppointmentTop from '../../components/AppointmentTop'
+import Footer from '../../components/Footer'
 
 function Appointment() {
   return (
-    <div>Appointment</div>
+    <><div>
+    <AppointmentTop/>
+  </div>
+    <Footer/>
+  <div>
+
+  </div></>
+    
   )
 }
 
