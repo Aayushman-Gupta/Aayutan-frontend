@@ -13,7 +13,6 @@ const Chatroom = () => {
   const containerRef = useRef(null);
   const context=useContext(userContext)
   const {userName,chatMember,setChatMemberName}=context
-
   // Fetch the chat ID and establish a WebSocket connection
   useEffect(() => {
     const fetchChatIdAndConnect = async () => {
@@ -30,7 +29,7 @@ const Chatroom = () => {
         // Handle incoming messages
         newSocket.onmessage = async function (event) {
           const data = JSON.parse(event.data);
-        //   console.log(data)
+           console.log(data)
           await setChatMemberName(data.sender_username)
           setMessages((prevMessages) => [...prevMessages, data]);
         };
@@ -70,7 +69,7 @@ const Chatroom = () => {
       scrollToBottom();
       console.log(chatMember)
       setMessages((prevMessages) => [...prevMessages, {message,sender_username:userName}]);
-      socket.send(JSON.stringify({ message,receiver_username: {chatMember} }));
+      socket.send(JSON.stringify({ message,receiver_username: chatMember }));
       setMessage("");  // Clear the message input
     }
   }

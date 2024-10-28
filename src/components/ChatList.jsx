@@ -8,7 +8,7 @@ export default function ChatList() {
   const [searchTerm, setSearchTerm] = useState("");
   const [contacts,setContacts]=useState([])
   const context=useContext(userContext)
-  const {setChatMemberName,chatMember}=context
+  const {userName,setChatMemberName,chatMember}=context
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);

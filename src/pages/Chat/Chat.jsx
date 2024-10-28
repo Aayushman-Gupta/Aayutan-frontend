@@ -9,10 +9,10 @@ function Chat() {
   return (
     <div>
  
-      <Stack direction="row">
+      <Stack direction="row" sx={{ width: "100%", height: "100vh" }}>
         
-        <ChatList/>
-        <Chatroom/>
+        <ChatList sx={{ flex: 1 }}/>
+        <Chatroom sx={{ flex: 1 }}/>
       </Stack>
       
     </div>

@@ -29,8 +29,13 @@ function Usercontextprovider(props) {
 const setname=async(uname)=>{
   setUserName(uname)
 }
-const setChatMemberName=async(uname)=>{
-  setChatMember(uname)
+const setChatMemberName=async(mname)=>{
+  console.log(mname)
+  await setnameTemp(mname)
+}
+
+const setnameTemp=async(mname)=>{
+  setChatMember(mname)
 }
 
 
